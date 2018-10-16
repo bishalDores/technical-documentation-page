@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Documentation</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    
+</head>
+
+<body>
+    <!--navbar-->
+    <nav id="navbar">
+        <header>PHP Documentation</header>
+        <ul>
+            <li><a href="#introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#what_you_should_know" class="nav-link">What You Should Already Know</a></li>
+            <li><a href="#php_other_languages" class="nav-link">PHP & other Languages</a></li>
+            <li><a href="#hello_world" class="nav-link">Hello World</a></li>
+            <li><a href="#variables" class="nav-link">Variables</a></li>
+            <li><a href="#declare_variables" class="nav-link">Declaring Variables</a></li>
+            <li><a href="#variable_scope" class="nav-link">Variable Scope</a></li>
+            <li><a href="#global_variables" class="nav-link">Global Variables</a></li>
+            <li><a href="#constants" class="nav-link">Constants</a></li>
+            <li><a href="#if_else_statement" class="nav-link">if..else statement</a></li>
+            <li><a href="#while_statement" class="nav-link">while statement</a></li>
+            <li><a href="#function_declare" class="nav-link">Function Declarations</a></li>
+            <li><a href="#reference" class="nav-link">Reference</a></li>
+
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="introduction">
+            <header>Introduction</header>
+            <article>
+                <p>PHP: Hypertext Preprocessor (or simply PHP) is a server-side scripting language designed for Web development, but also used as a general-purpose programming language. It was originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Group. PHP originally stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor.PHP code may be embedded into HTML code, or it can be used in combination with various web template systems, web content management systems, and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications. The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge.</p><br>
+
+                <p>PHP development began in 1994 when Rasmus Lerdorf wrote several Common Gateway Interface (CGI) programs in C, which he used to maintain his personal homepage. He extended them to work with web forms and to communicate with databases, and called this implementation "Personal Home Page/Forms Interpreter" or PHP/FI. The following changes have been made in PHP 7 :</p>
+
+                <li>Many fatal- or recoverable-level legacy PHP error mechanisms were replaced with modern object-oriented exceptions</li>
+                <li>The syntax for variable dereferencing was reworked to be internally more consistent and complete, allowing the use of the operators ->, [], (), {}, and :: with arbitrary meaningful left-hand-side expressions</li>
+                <li>Support for legacy PHP 4-style constructor methods was deprecated</li>
+                <li>The behavior of the foreach statement was changed to be more predictable</li>
+                <li>The behavior of the list() operator was changed to remove support for strings</li>
+                <li>An oversight allowing a switch statement to have multiple default clauses was fixed</li>
+            </article>
+        </section>
+
+        <section class="main-section" id="what_you_should_know">
+            <header>What You Should Already Know</header>
+            <article>
+                <p>This guide assumes you have the following basic background:</p>
+
+                <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+                <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+                <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about PHP.</li>
+            </article>
+        </section>
+
+        <section class="main-section" id="php_other_languages">
+            <header>PHP & other Languages</header>
+            <article>
+                <h3>PHP vs. ASP</h3>
+                <p>ASP is not really a language in itself, but an acronym for Active Server Pages; the actual languages used to program ASP include Visual Basic Script, JScript, and C#, among others. The biggest drawback of ASP is that it's a proprietary system that is natively used only on the Microsoft Internet Information Server (IIS) platform. ASP is said to be a slower and more cumbersome language than PHP, with less overall stability. However, the components built in ASP are really limited, so if you need to use "advanced" features (like interacting with FTP servers), you'll need to buy additional components.</p><br>
+                <h3>PHP vs. ColdFusion</h3>
+                <p>PHP is commonly said to be faster and more efficient for complex programming tasks and trying out new ideas, and is considered by many to be more stable and less resource-intensive as well. While ColdFusion once had better error handling, database abstraction, and date parsing, the database abstraction shortfalls were addressed in PHP 4. A particular quality that is listed as one of ColdFusion's strengths is its excellent search engine, but many strong arguments suggest that a search engine is not something that should be included in a web scripting language.</p><br>
+                <h3>PHP vs. Perl</h3>
+                <p>The biggest advantage of PHP over Perl is that PHP was designed for scripting for the web, while Perl was designed to do a lot more. Because of this, Perl can get very complicated. The flexibility / complexity of Perl can make it difficult for developers of varying skill levels to collaborate. PHP has a less-confusing and stricter format without losing flexibility. PHP is also easier to integrate into existing HTML than Perl. In large part, PHP has all the 'good' functionality of Perl - constructs, syntax, et cetera - without making it as complicated as Perl can be.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="hello_world">
+            <header>Hello World</header>
+            <article>
+                To get started with writing PHP, open any editor and write your first "Hello world" PHP code:
+                <code>
+                    function writeMsg() {
+                    echo "Hello world!";
+                    }
+
+                    writeMsg();
+
+                </code>
+                But before you want to see the result you need to run the localhost like XAMPP/WAMP or anything that runs on local server, then create a file in htdocs and write the above code in PHP tags to see the desired result.
+            </article>
+        </section>
+
+        <section class="main-section" id="variables">
+            <header>Variables</header>
+            <article>
+                <p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume).</p><br>
+                <p>Rules for PHP variables:</p><br>
+                <li>A variable starts with the $ sign, followed by the name of the variable</li>
+                <li>A variable name must start with a letter or the underscore character</li>
+                <li>A variable name cannot start with a number</li>
+                <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+                <li>Variable names are case-sensitive ($age and $AGE are two different variables)</li>
+            </article>
+        </section>
+
+        <section class="main-section" id="declare_variables">
+            <header>Declaring Variables</header>
+            <article>
+                You can declare variable in several ways.
+                <p>With simply using the $ sign. For example,
+
+                    <code>$txt = "Hello world!";</code>
+                </p>
+                <p>Way to declare integers. For example,
+
+                    <code>$x = 5;</code>
+                </p>
+                <p>But in object oriented programming where we have to create class, we need to define variables inside the class. For example,
+                    <code>
+                        class phpClass {
+                        var $var1;
+                        var $var2 = "constant string";
+
+                        function myfunc ($arg1, $arg2) {
+                        [..]
+                        }
+                        [..]
+                        }
+                    </code>
+                    Here we have to use the keyword var.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="variable_scope">
+            <header>Variable Scope</header>
+            <article>
+                <p>The scope of a variable is the context within which it is defined. For the most part all PHP variables only have a single scope. This single scope spans included and required files
+                    as well. For example:
+                    <code>
+                        $a = 1;
+                        include 'b.inc';
+                    </code>
+                </p>
+                <p>Here the $a variable will be available within the included b.inc script. However, within user-defined functions a local function scope is introduced. Any variable used inside a function is by default limited to the local function scope. For example:
+                    <code>
+                        $a = 1; /* global scope */
+
+                        function test()
+                        {
+                        echo $a; /* reference to local scope variable */
+                        }
+
+                        test();
+                    </code>
+                </p>
+                <p>This script will not produce any output because the echo statement refers to a local version of the $a variable, and it has not been assigned a value within this scope. You may notice that this is a little bit different from the C language in that global variables in C are automatically available to functions unless specifically overridden by a local definition. This can cause some problems in that people may inadvertently change a global variable. In PHP global variables must be declared global inside a function if they are going to be used in that function.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="global_variables">
+            <header>Global Variables</header>
+            <article>
+                <p>The global keyword is used to access a global variable from within a function.
+
+                    To do this, use the global keyword before the variables (inside the function):
+                    <code>
+                        $x = 5;
+                        $y = 10;
+
+                        function myTest() {
+                        global $x, $y;
+                        $y = $x + $y;
+                        }
+
+                        myTest();
+                        echo $y; // outputs 15
+                    </code>
+
+                </p>
+                <p>PHP also stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable. This array is also accessible from within functions and can be used to update global variables directly.<br>
+
+                    The example above can be rewritten like this:
+                    <code>
+                        $x = 5;
+                        $y = 10;
+
+                        function myTest() {
+                        $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+                        }
+
+                        myTest();
+                        echo $y; // outputs 15
+                    </code>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="constants">
+            <header>Constants</header>
+            <article>
+                <p>Constants are like variables except that once they are defined they cannot be changed or undefined. A constant is an identifier (name) for a simple value. The value cannot be changed during the script. A valid constant name starts with a letter or underscore (no $ sign before the constant name).</p>
+                <p><strong>Note:</strong> Unlike variables, constants are automatically global across the entire script.</p>
+                <p>To create a constant use a <strong>define</strong> function. The example below creates a constant with a case-sensitive name:
+                    <code>
+                        define("GREETING", "Welcome to W3Schools.com!");
+                        echo GREETING;
+                    </code>
+                </p>
+                <p>Constants are automatically global and can be used across the entire script.
+
+                    The example below uses a constant inside a function, even if it is defined outside the function:
+
+                    <code>
+                        define("GREETING", "Welcome to W3Schools.com!");
+
+                        function myTest() {
+                        echo GREETING;
+                        }
+
+                        myTest();
+                    </code>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="if_else_statement">
+            <header>if..else statement</header>
+            <article>
+                <p>
+                    Very often when you write code, you want to perform different actions for different conditions. You can use conditional statements in your code to do this.
+
+                    In PHP we have the following conditional statements:
+                </p>
+                <li>if statement - executes some code if one condition is true</li>
+                <li>if...else statement - executes some code if a condition is true and another code if that condition is false</li>
+                <li>if...elseif....else statement - executes different codes for more than two conditions</li>
+                <li>switch statement - selects one of many blocks of code to be executed</li><br>
+                <h3>The if Statement</h3>
+                <p>The if statement executes some code if one condition is true.
+
+                    <code>
+                        if ($a > $b)
+                        echo "a is bigger than b";
+                    </code>
+                </p>
+                <h3>The if..else Statement</h3>
+                <p>The if....else statement executes some code if a condition is true and another code if that condition is false.
+
+                    <code>
+                        if ($a > $b){
+                        echo "a is bigger than b";
+                        }
+
+                        else{
+                        echo "b is smaller than a";
+                        }
+
+
+                    </code>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="while_statement">
+            <header>while statement</header>
+            <article>
+                <p>while loops are the simplest type of loop in PHP. They behave just like their C counterparts. The basic form of a while statement is:<br>
+                </p>
+
+                <span>while (expr)
+                    statement</span>
+
+                <br>
+                <p>The meaning of a while statement is simple. It tells PHP to execute the nested statement(s) repeatedly, as long as the while expression evaluates to TRUE. The value of the expression is checked each time at the beginning of the loop, so even if this value changes during the execution of the nested statement(s), execution will not stop until the end of the iteration (each time PHP runs the statements in the loop is one iteration). Sometimes, if the while expression evaluates to FALSE from the very beginning, the nested statement(s) won't even be run once.</p>
+                <p>Like with the if statement, you can group multiple statements within the same while loop by surrounding a group of statements with curly braces, or by using the alternate syntax:</p>
+                <span>while (expr):
+                    statement
+                    ...
+                    endwhile;</span>
+                    <br>
+                    <p>The following examples are identical, and both print the numbers 1 through 10:</p>
+                    <code>
+                        /* example 1 */
+
+                        $i = 1;
+                        while ($i <= 10) {
+                            echo $i++;  /* the printed value would be
+                            $i before the increment
+                            (post-increment) */
+                        }
+
+                        /* example 2 */
+
+                        $i = 1;
+                        while ($i <= 10):
+                            echo $i;
+                            $i++;
+                        endwhile;
+                    </code>
+                    <p>The below loop would run one time exactly, since after the first iteration, when truth expression is checked, it evaluates to FALSE ($i is not bigger than 0) and the loop execution ends.</p>
+                    <code>
+                        $i = 0;
+                        do {
+                            echo $i;
+                        } while ($i > 0);
+                    </code>
+            </article>
+        </section>
+        
+        <section class="main-section" id="function_declare">
+           <header>Function Declarations</header>
+            <article>
+                <p>PHP functions are similar to other programming languages. A function is a piece of code which takes one more input in the form of parameter and does some processing and returns a value.
+
+                You already have seen many functions like fopen() and fread() etc. They are built-in functions but PHP gives you option to create your own functions as well.</p>
+                <p>There are two parts which should be clear to you −</p>
+                <li>Creating a PHP Function</li>
+                <li>Calling a PHP Function</li><br>
+                
+                <p>Its very easy to create your own PHP function. Suppose you want to create a PHP function which will simply write a simple message on your browser when you will call it. Following example creates a function called writeMessage() and then calls it just after creating it.</p>
+                <code>
+                    /* Defining a PHP Function */
+                       function writeMessage() {
+                          echo "You are really a nice person, Have a nice time!";
+                       }
+         
+                       /* Calling a PHP Function */
+                       writeMessage();
+                </code>
+                <p>PHP gives you option to pass your parameters inside a function. You can pass as many as parameters your like. These parameters work like variables inside your function. Following example takes two integer parameters and add them together and then print them.</p>
+                <code>
+                        function addFunction($num1, $num2) {
+                        $sum = $num1 + $num2;
+                        echo "Sum of the two numbers is : $sum";
+                        }
+
+                        addFunction(10, 20);
+                </code>
+            </article>
+        </section>
+        
+        <section class="main-section" id="reference">
+           <header>Reference</header>
+            <article>
+                <li>All the information in this page is taken from <a href="http://php.net/">php.net</a> and <a href="https://www.w3schools.com/php/">w3schools.com</a></li>
+            </article>
+        </section>
+
+
+
+    </main>
+<!--    <script src="js/bundle.js"></script>-->
+</body>
+</html>
